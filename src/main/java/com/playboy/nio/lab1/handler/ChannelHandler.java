@@ -5,7 +5,7 @@ import java.nio.channels.AsynchronousSocketChannel;
 import java.nio.charset.Charset;
 
 /**
- * channel处理器
+ * AIO - channel处理器
  */
 public class ChannelHandler {
     private AsynchronousSocketChannel channel;
@@ -22,5 +22,12 @@ public class ChannelHandler {
         writeBuffer.put(bytes);
         writeBuffer.flip();
         channel.write(writeBuffer);
+    }
+    public AsynchronousSocketChannel channel(){
+        return channel;
+    }
+
+    public void setChannel(AsynchronousSocketChannel channel){
+        this.channel = channel;
     }
 }
